@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="referrer" content="no-referrer">
     <meta charset="utf-8">
     <meta name="viewport" content='width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=yes'>
-    <title>Unity WebGL Player | TestWebGL</title>
+    <title>Unity WebGL Player | JiMu</title>
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
         html{
@@ -34,12 +35,12 @@
 </head>
 <body>
     <!--IMAGETARGETS-->
-		<imagetarget id='bear' src='targets/bear.png'></imagetarget>
-		<imagetarget id='bfly' src='targets/bfly.png'></imagetarget>
-		<imagetarget id='flower' src='targets/flower.png'></imagetarget>
-		<imagetarget id='lady' src='targets/lady.png'></imagetarget>
-		<imagetarget id='reel' src='targets/reel.png'></imagetarget>
-		<imagetarget id='rmn' src='targets/rmn.png'></imagetarget>
+		<imagetarget id='乐毅博士' src='targets/乐毅博士.jpg'></imagetarget>
+		<imagetarget id='宋建涛' src='targets/宋建涛.jpg'></imagetarget>
+		<imagetarget id='宋建雷' src='targets/宋建雷.jpg'></imagetarget>
+		<imagetarget id='张啸天' src='targets/张啸天.jpg'></imagetarget>
+		<imagetarget id='汤宇浩' src='targets/汤宇浩.jpg'></imagetarget>
+		<imagetarget id='石炀' src='targets/石炀.jpg'></imagetarget>
 
     <video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>
     <div id="startARDiv" class="ctaDiv">
@@ -103,12 +104,12 @@
                 
                 document.getElementById("startARDiv").style.display = "none";
                 createUnityInstance(document.querySelector("#unity-canvas"), {
-                    dataUrl: "Build/Build.data.gz",
-                    frameworkUrl: "Build/Build.framework.js.gz",
-                    codeUrl: "Build/Build.wasm.gz",
+                    dataUrl: "Build/Build.data",
+                    frameworkUrl: "Build/Build.framework.js",
+                    codeUrl: "Build/Build.wasm",
                     streamingAssetsUrl: "StreamingAssets",
                     companyName: "DefaultCompany",
-                    productName: "TestWebGL",
+                    productName: "JiMu",
                     productVersion: "0.1",
                     //webglContextAttributes: { "preserveDrawingBuffer": true },
                     // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
