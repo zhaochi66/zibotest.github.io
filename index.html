@@ -157,6 +157,7 @@
                 {
                     const video = document.querySelector("#webcam-video");
                     video.srcObject = webcamStream;
+                    video.setAttribute("playsinline", true);
                     try {
                         await arCamera.startWebcam(video);
                         console.log("Webcam started successfully");
