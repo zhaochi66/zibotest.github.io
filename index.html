@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content='width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=yes'>
-    <title>Unity WebGL Player | JiMu</title>
+    <title>Unity WebGL Player | TestWebGL</title>
     <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
     <style>
         html{
             height: -webkit-fill-available;
@@ -35,12 +34,12 @@
 </head>
 <body>
     <!--IMAGETARGETS-->
-		<imagetarget id='乐毅博士' src='targets/乐毅博士.jpg'></imagetarget>
-		<imagetarget id='宋建涛' src='targets/宋建涛.jpg'></imagetarget>
-		<imagetarget id='宋建雷' src='targets/宋建雷.jpg'></imagetarget>
-		<imagetarget id='张啸天' src='targets/张啸天.jpg'></imagetarget>
-		<imagetarget id='汤宇浩' src='targets/汤宇浩.jpg'></imagetarget>
-		<imagetarget id='石炀' src='targets/石炀.jpg'></imagetarget>
+		<imagetarget id='bear' src='targets/bear.png'></imagetarget>
+		<imagetarget id='bfly' src='targets/bfly.png'></imagetarget>
+		<imagetarget id='flower' src='targets/flower.png'></imagetarget>
+		<imagetarget id='lady' src='targets/lady.png'></imagetarget>
+		<imagetarget id='reel' src='targets/reel.png'></imagetarget>
+		<imagetarget id='rmn' src='targets/rmn.png'></imagetarget>
 
     <video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>
     <div id="startARDiv" class="ctaDiv">
@@ -109,7 +108,7 @@
                     codeUrl: "Build/Build.wasm",
                     streamingAssetsUrl: "StreamingAssets",
                     companyName: "DefaultCompany",
-                    productName: "JiMu",
+                    productName: "TestWebGL",
                     productVersion: "0.1",
                     //webglContextAttributes: { "preserveDrawingBuffer": true },
                     // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
@@ -148,7 +147,6 @@
             }
             async function StartWebcam(){
                 console.log("StartWebcam")
-                new window.VConsole();
                 while (window.requestingForPermissions) {
                     // Wait until requestingForPermissions becomes true.
                     console.log("Waiting for permissions...");
