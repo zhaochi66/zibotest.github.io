@@ -6,6 +6,7 @@
     <title>Unity WebGL Player | JiMu</title>
     <link rel="stylesheet" href="TemplateData/style.css">
     <!-- <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script> -->
+
     <style>
         html{
             height: -webkit-fill-available;
@@ -35,14 +36,6 @@
 </head>
 <body>
     <!--IMAGETARGETS-->
-		<imagetarget id='乐毅博士' src='targets/乐毅博士.jpg'></imagetarget>
-		<imagetarget id='宋建涛' src='targets/宋建涛.jpg'></imagetarget>
-		<imagetarget id='宋建雷' src='targets/宋建雷.jpg'></imagetarget>
-		<imagetarget id='张啸天' src='targets/张啸天.jpg'></imagetarget>
-		<imagetarget id='汤宇浩' src='targets/汤宇浩.jpg'></imagetarget>
-		<imagetarget id='石炀' src='targets/石炀.jpg'></imagetarget>
-		<imagetarget id='logo_full' src='targets/logo_full.png'></imagetarget>
-		<imagetarget id='logo_single' src='targets/logo_single.png'></imagetarget>
 
     <video id="webcam-video" muted autoplay playsinline style="width:1px;position:absolute"></video>
     <div id="startARDiv" class="ctaDiv">
@@ -96,6 +89,8 @@
                 console.error("Failed to initialize ImageTracker. Are you missing opencv.js? " + error);
                 ShowError("Failed to initialize the experience.");
             });
+
+
             var container = document.querySelector("#unity-container");
             var canvas = document.querySelector("#unity-canvas");
             var loadingBar = document.querySelector("#unity-loading-bar");
@@ -123,6 +118,7 @@
                 ).then((unityInstance) => {
                     window.unityInstance = unityInstance;
                     RequestWebcam();
+
                     loadingBar.style.display = "none";
                 });
                 loadingBar.style.display = "block";
@@ -133,6 +129,7 @@
                 },
                 audio: false
             };
+
             window.requestingForPermissions = false;
             async function RequestWebcam(){
                 window.requestingForPermissions = true;
@@ -148,6 +145,7 @@
                     window.requestingForPermissions = false;
                 }           
             }
+
             async function StartWebcam(){
                 console.log("StartWebcam")
                 // new window.VConsole();
@@ -156,7 +154,9 @@
                     console.log("Waiting for permissions...");
                     await new Promise(resolve => setTimeout(resolve, 100)); // Adjust the delay time as needed.
                 }
+
                 console.log("Got Permissions");
+
                 if(window.webcamStream)
                 {
                     const video = document.querySelector("#webcam-video");
@@ -164,6 +164,7 @@
                     try {
                         await arCamera.startWebcam(video);
                         console.log("Webcam started successfully");
+
                         window.unityInstance.SendMessage('ARCamera', 'OnStartWebcamSuccess');
                     }
                     catch(err){
@@ -211,22 +212,26 @@
                 //console.log(window.WEBCAM_SETTINGS);
                 iTracker.WEBCAM_NAME = select.options[select.selectedIndex].innerHTML;
             }
+
             function ShowError(error){
                 document.getElementById("errorDiv").style.display = "flex";
                 document.getElementById("errorText").innerHTML = error;
             }
+
             function ShowScreenshot(dataUrl){
                 document.getElementById("screenshotDiv").style.display = "flex";
                 document.getElementById("screenshotImg").src = dataUrl;
                 document.getElementById("screenshotImg").style.width = "80vw";
                 document.getElementById("screenshotImg").style.height = 80 / window.innerWidth * window.innerHeight + "vw";
             }
+
             function ShowConfirmUrl(url){
                 document.getElementById("confirmUrlDiv").style.display = "flex";
                 window.newUrlString = url;
                 document.getElementById("confirmUrlText").innerText = "Are you sure you want to visit " + url;                
             }
             
+
     </script>
 </body>
 </html>
